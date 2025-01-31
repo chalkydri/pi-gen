@@ -1,0 +1,53 @@
+name: Build Raspberry Pi 5 OS Image
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-pi5-image:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Add step to free up disk space
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          df -h
+
+      - name: Build Raspberry Pi 5 OS image
+        id: build
+        uses: usimd/pi-gen-action@v1
+        with:
+          image-name: pi5-chalkydri
+          stage-list: stage0 stage1 stage2  # Builds lite version
+          pi-gen-version: arm64  # Specifically for Pi 5
+          release: bookworm
+          hostname: chalkydri
+          username: chalkydri
+          password: chalkydri
+          enable-ssh: 1
+          compression: zstd
+          compression-level: 9
+          increase-runner-disk-space: true
+          verbose-output: true
+
+      - name: Upload image artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pi5-image
+          path: ${{ steps.build.outputs.image-path }}
+          retention-days: 5
