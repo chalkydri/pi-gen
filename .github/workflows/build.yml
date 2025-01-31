@@ -1,0 +1,44 @@
+name: Build Raspberry Pi OS Image
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-pi-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Raspberry Pi OS image
+        id: build
+        uses: usimd/pi-gen-action@v1
+        with:
+          image-name: raspios-custom
+          stage-list: stage0 stage1 stage2  # Builds lite version, add stage3/4/5 for desktop
+          release: bookworm
+          hostname: raspberrypi
+          username: pi
+          password: raspberry  # Consider using GitHub secrets for passwords
+          enable-ssh: 1
+          compression: zip
+          compression-level: 6
+          # Increase disk space to handle larger builds
+          increase-runner-disk-space: true
+          # Enable verbose output for debugging
+          verbose-output: true
+
+      - name: Upload image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: raspios-image
+          path: ${{ steps.build.outputs.image-path }}
+          # Keep artifacts for 5 days
+          retention-days: 5
