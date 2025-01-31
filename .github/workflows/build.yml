@@ -14,6 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: arm64
+
       # Add step to free up disk space
       - name: Free up disk space
         run: |
