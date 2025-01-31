@@ -4,12 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-      - master
+      - arm64
   pull_request:
     branches:
-      - main
-      - master
+      - arm64
 
 jobs:
   build-pi5-image:
