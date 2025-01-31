@@ -1,0 +1,12 @@
+[Unit]
+Description=Chalkydri vision system
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/chalkydri
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=default.target
+RequiredBy=network.target
