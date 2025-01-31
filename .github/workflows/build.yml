@@ -14,11 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: arm64
-
       # Add step to free up disk space
       - name: Free up disk space
         run: |
@@ -32,6 +27,7 @@ jobs:
         id: build
         uses: usimd/pi-gen-action@v1
         with:
+          pi-gen-repository: chalkydri/pi-gen
           image-name: pi5-chalkydri
           stage-list: stage0 stage1 stage2  # Builds lite version
           pi-gen-version: arm64  # Specifically for Pi 5
