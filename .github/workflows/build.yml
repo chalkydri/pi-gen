@@ -40,7 +40,7 @@ jobs:
           username: chalkydri
           password: chalkydri
           enable-ssh: 1
-          compression: zstd
+          compression: xz
           compression-level: 9
           increase-runner-disk-space: true
           verbose-output: true
