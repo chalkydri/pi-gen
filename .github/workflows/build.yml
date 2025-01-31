@@ -1,6 +1,7 @@
 name: Build Raspberry Pi 5 OS Image
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
