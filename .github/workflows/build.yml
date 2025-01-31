@@ -1,4 +1,4 @@
-name: Build Raspberry Pi OS Image
+name: Build Raspberry Pi 5 OS Image
 
 on:
   push:
@@ -11,34 +11,43 @@ on:
       - master
 
 jobs:
-  build-pi-image:
+  build-pi5-image:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Raspberry Pi OS image
+      # Add step to free up disk space
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          df -h
+
+      - name: Build Raspberry Pi 5 OS image
         id: build
         uses: usimd/pi-gen-action@v1
         with:
-          image-name: raspios-custom
-          stage-list: stage0 stage1 stage2  # Builds lite version, add stage3/4/5 for desktop
+          image-name: pi5-custom
+          stage-list: stage0 stage1 stage2  # Builds lite version
+          pi-gen-version: arm64  # Specifically for Pi 5
           release: bookworm
-          hostname: raspberrypi
+          hostname: pi5
           username: pi
-          password: raspberry  # Consider using GitHub secrets for passwords
+          password: ${{ secrets.PI_PASSWORD }}
           enable-ssh: 1
           compression: zip
           compression-level: 6
-          # Increase disk space to handle larger builds
           increase-runner-disk-space: true
-          # Enable verbose output for debugging
           verbose-output: true
 
       - name: Upload image artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: raspios-image
+          name: pi5-image
           path: ${{ steps.build.outputs.image-path }}
-          # Keep artifacts for 5 days
           retention-days: 5
