@@ -23,7 +23,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install binfmt-support
-          sudo apt install qemu-arm-static
+          sudo apt install qemu-user-static
           sudo update-binfmts --enable
       
       - name: Build
