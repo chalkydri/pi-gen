@@ -27,7 +27,7 @@ jobs:
           sudo update-binfmts --enable
       
       - name: Build
-        run: ./build-docker.sh
+        run: ./build.sh
 
       - name: Upload image artifact
         if: success()
