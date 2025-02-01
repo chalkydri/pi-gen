@@ -36,10 +36,3 @@ unzip zip p7zip-full
 file
 kms++-utils
 pigpiod pigpio
-openjdk-17-jdk-headless
-libtbb2
-git
-libegl1 
-libopengl0 
-libopencv-core4.5
-libgl1-mesa-dri
