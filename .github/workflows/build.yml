@@ -24,6 +24,7 @@ jobs:
           sudo apt update
           sudo apt install binfmt-support
           sudo apt install qemu-user-static
+          sudo apt install quilt debootstrap libarchive-tools arch-test
           sudo update-binfmts --enable
       
       - name: Build
