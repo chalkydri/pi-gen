@@ -1,0 +1,10 @@
+IMG_NAME=chalkydri
+TARGET_HOSTNAME=chalkydri
+ENABLE_SSH=1
+PI_GEN=pi-gen
+PI_GEN_REPO=https://github.com/chalkydri/chalkydri
+LOCALE_DEFAULT=en_US.UTF-8
+DEPLOY_COMPRESSION=xz
+KEYBOARD_KEYMAP=us
+KEYBOARD_LAYOUT="English (US) - English (US\\, international with dead keys)"
+TIMEZONE_DEFAULT=America/New_York

@@ -14,28 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Build Raspberry Pi 5 OS image
-        id: build
-        uses: usimd/pi-gen-action@v1
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          pi-gen-repository: chalkydri/pi-gen
-          image-name: pi5-chalkydri
-          stage-list: stage0 stage1 stage2 stage3  # Builds lite version
-          pi-gen-version: arm64  # Specifically for Pi 5
-          release: bookworm
-          hostname: chalkydri
-          username: chalkydri
-          password: chalkydri
-          enable-ssh: 1
-          compression: xz
-          compression-level: 9
-          increase-runner-disk-size: true
-          verbose-output: true
+          ref: arm64
+
+      - name: Install deps
+        run: |
+          sudo apt update
+          sudo apt install binfmt-support
+          sudo apt install qemu qemu-user-static
+          sudo update-binfmts --enable
+      
+      - name: Build
+        run: ./build-docker.sh
 
       - name: Upload image artifact
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: pi5-image
-          path: ${{ steps.build.outputs.image-path }}
+          path: ./deploy/*.img.xz
           retention-days: 5
+          if-no-files-found: error
