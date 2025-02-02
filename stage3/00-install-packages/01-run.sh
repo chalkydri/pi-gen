@@ -9,6 +9,7 @@ cp files/chalkydri.service "${ROOTFS_DIR}/etc/systemd/system"
 wget -O rustup-init https://sh.rustup.rs
 chmod +x rustup-init
 ./rustup-init -y --default-toolchain nightly --profile minimal
+. "$HOME/.cargo/env"
 
 git clone https://github.com/chalkydri/chalkydri.git
 
