@@ -11,7 +11,7 @@ on:
 
 jobs:
   build-pi5-image:
-    runs-on: ubuntu-latest-arm
+    runs-on: ubuntu-24.04-arm
     
     steps:
       - name: Checkout
