@@ -16,7 +16,7 @@ mv target/release/chalkydri /usr/local/bin
 popd #chalkydri
 
 rm -r ~/.rustup ~/.cargo chalkydri
-apt remove git build-essentials pkg-config \
+apt remove git build-essential pkg-config \
 	curl ca-certificates
 
 systemctl enable chalkydri
