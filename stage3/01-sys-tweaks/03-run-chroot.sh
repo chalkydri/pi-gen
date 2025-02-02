@@ -3,7 +3,7 @@
 apt update
 apt install git
 
-wget -O rustup-init https://sh.rustup.rs
+curl -o rustup-init https://sh.rustup.rs
 chmod +x rustup-init
 ./rustup-init -y --default-toolchain nightly --profile minimal
 . "$HOME/.cargo/env"
