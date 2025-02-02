@@ -2,7 +2,7 @@
 
 cp files/chalkydri.service "${ROOTFS_DIR}/etc/systemd/system"
 
-on_chroot <<- EOF
+on_chroot << EOF
 apt update
 apt install git
 
