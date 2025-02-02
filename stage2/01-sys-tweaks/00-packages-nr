@@ -1,18 +1,13 @@
 ssh less fbset sudo psmisc strace ed ncdu
-console-setup keyboard-configuration debconf-utils parted
-build-essential manpages-dev bash-completion gdb pkg-config
+console-setup keyboard-configuration debconf-utils
+build-essential manpages-dev bash-completion pkg-config
 python-is-python3
 v4l-utils
-gpiod python3-libgpiod
-python3-gpiozero
-pigpio python3-pigpio raspi-gpio python3-rpi.gpio
-python3-spidev
-python3-smbus2
 avahi-daemon
 lua5.1
 luajit
 ca-certificates curl
-fake-hwclock nfs-common usbutils
+fake-hwclock usbutils
 dosfstools
 dphys-swapfile
 raspberrypi-sys-mods
@@ -21,13 +16,9 @@ usb-modeswitch
 libpam-chksshpwd
 rpi-update
 libmtp-runtime
-rsync
 htop
 man-db
-policykit-1
-ssh-import-id
 ethtool
-ntfs-3g
 pciutils
 rpi-eeprom
 raspi-utils
@@ -35,4 +26,3 @@ udisks2
 unzip zip p7zip-full
 file
 kms++-utils
-pigpiod pigpio
