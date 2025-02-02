@@ -1,3 +1,4 @@
 rfkill
 rpicam-apps-lite
 libcamera-dev
+initramfs-tools
