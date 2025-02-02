@@ -1,4 +1,3 @@
 rfkill
-libcamera-tools
-rpicam-apps
+rpicam-apps-lite
 libcamera-dev
