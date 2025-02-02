@@ -5,6 +5,7 @@ python-is-python3
 v4l-utils
 ca-certificates curl
 fake-hwclock usbutils
+dphys-swapfile
 raspberrypi-sys-mods
 apt-listchanges
 usb-modeswitch
