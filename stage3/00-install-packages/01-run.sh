@@ -6,6 +6,10 @@ EOF
 
 cp files/chalkydri.service "${ROOTFS_DIR}/etc/systemd/system"
 
+on_chroot <<- EOF
+apt update
+apt install git
+
 wget -O rustup-init https://sh.rustup.rs
 chmod +x rustup-init
 ./rustup-init -y --default-toolchain nightly --profile minimal
@@ -20,6 +24,5 @@ popd #chalkydri
 
 rm -r .rustup .cargo chalkydri
 
-on_chroot <<- EOF
 systemctl enable chalkydri
 EOF
