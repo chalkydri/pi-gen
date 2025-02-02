@@ -1,28 +1,14 @@
-ssh less fbset sudo psmisc strace ed ncdu
-console-setup keyboard-configuration debconf-utils
-build-essential manpages-dev bash-completion pkg-config
+ssh doas psmisc
+console-setup debconf-utils
+build-essential pkg-config
 python-is-python3
 v4l-utils
-avahi-daemon
-lua5.1
-luajit
 ca-certificates curl
 fake-hwclock usbutils
-dosfstools
-dphys-swapfile
 raspberrypi-sys-mods
 apt-listchanges
 usb-modeswitch
 libpam-chksshpwd
-rpi-update
-libmtp-runtime
-htop
-man-db
 ethtool
-pciutils
 rpi-eeprom
 raspi-utils
-udisks2
-unzip zip p7zip-full
-file
-kms++-utils
