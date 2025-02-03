@@ -22,7 +22,7 @@ jobs:
       - name: Install deps
         run: |
           sudo apt update
-          sudo apt install binfmt-support qemu-user-static quilt debootstrap libarchive-tools arch-test
+          sudo apt install initramfs-tools binfmt-support qemu-user-static quilt debootstrap libarchive-tools arch-test
           sudo update-binfmts --enable
       
       - name: Build
