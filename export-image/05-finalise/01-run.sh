@@ -6,7 +6,7 @@ SBOM_FILE="${STAGE_WORK_DIR}/${IMG_FILENAME}${IMG_SUFFIX}.sbom"
 
 on_chroot << EOF
 apt update
-apt install initramfs-tools
+apt install -y initramfs-tools
 update-initramfs -k all -c
 if [ -x /etc/init.d/fake-hwclock ]; then
 	/etc/init.d/fake-hwclock stop
