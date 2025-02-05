@@ -7,6 +7,7 @@ ca-certificates curl
 fake-hwclock usbutils
 dphys-swapfile
 raspberrypi-sys-mods
+raspi-firmware
 apt-listchanges
 usb-modeswitch
 libpam-chksshpwd
