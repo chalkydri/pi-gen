@@ -13,4 +13,5 @@ usb-modeswitch
 libpam-chksshpwd
 ethtool
 rpi-eeprom
+rpi-update
 raspi-utils
