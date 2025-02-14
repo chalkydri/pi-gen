@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 apt update
-apt install git libclang-dev
+apt install git libclang-dev python3-picamera2
 
 curl -o rustup-init https://sh.rustup.rs
 chmod +x rustup-init
