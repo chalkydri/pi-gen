@@ -20,3 +20,6 @@ apt remove git build-essential pkg-config \
 	curl ca-certificates libclang-dev
 
 systemctl enable chalkydri
+
+systemctl disable userconfig
+systemctl mask userconfig
