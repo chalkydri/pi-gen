@@ -11,7 +11,7 @@ chmod +x rustup-init
 git clone https://github.com/chalkydri/chalkydri.git
 
 pushd chalkydri
-cargo b -r --features rpi,__bindgen
+cargo b -p chalkydri -r --features rpi,__bindgen
 mv target/release/chalkydri /usr/local/bin
 popd #chalkydri
 
