@@ -3,11 +3,15 @@
 apt update
 apt install git libclang-dev unzip
 
+# Install rustup
 curl -o rustup-init https://sh.rustup.rs
 chmod +x rustup-init
 ./rustup-init -y --default-toolchain nightly --profile minimal
 . "$HOME/.cargo/env"
+
+# Install bun
 curl -fsSL https://bun.sh/install | bash
+source /root/.bashrc
 
 git clone https://github.com/chalkydri/chalkydri.git
 
