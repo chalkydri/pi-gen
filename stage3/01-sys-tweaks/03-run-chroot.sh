@@ -7,6 +7,7 @@ curl -o rustup-init https://sh.rustup.rs
 chmod +x rustup-init
 ./rustup-init -y --default-toolchain nightly --profile minimal
 . "$HOME/.cargo/env"
+curl -fsSL https://bun.sh/install | bash
 
 git clone https://github.com/chalkydri/chalkydri.git
 
