@@ -20,11 +20,9 @@ cargo b -p chalkydri -r
 mv target/release/chalkydri /usr/local/bin
 popd #chalkydri
 
-rm -r ~/.rustup ~/.cargo chalkydri
+# Clean up
+rm -r ~/.rustup ~/.cargo ~/.bun chalkydri
 apt remove git build-essential pkg-config \
 	curl ca-certificates libclang-dev unzip
 
 systemctl enable chalkydri
-
-systemctl disable userconfig
-systemctl mask userconfig
