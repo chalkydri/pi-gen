@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 apt update
-apt install git libclang-dev
+apt install git libclang-dev unzip
 
 curl -o rustup-init https://sh.rustup.rs
 chmod +x rustup-init
@@ -18,7 +18,7 @@ popd #chalkydri
 
 rm -r ~/.rustup ~/.cargo chalkydri
 apt remove git build-essential pkg-config \
-	curl ca-certificates libclang-dev
+	curl ca-certificates libclang-dev unzip
 
 systemctl enable chalkydri
 
