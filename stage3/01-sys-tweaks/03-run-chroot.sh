@@ -16,8 +16,14 @@ source /root/.bashrc
 git clone https://github.com/chalkydri/chalkydri.git
 
 pushd chalkydri
+
+pushd ui
+bun run build
+popd #ui
+
 cargo b -p chalkydri -r
 mv target/release/chalkydri /usr/local/bin
+
 popd #chalkydri
 
 # Clean up
