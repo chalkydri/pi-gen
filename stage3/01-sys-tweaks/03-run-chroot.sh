@@ -18,6 +18,7 @@ git clone https://github.com/chalkydri/chalkydri.git
 pushd chalkydri
 
 pushd ui
+bun install
 bun run build
 popd #ui
 
