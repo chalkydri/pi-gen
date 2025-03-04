@@ -17,7 +17,7 @@ git clone https://github.com/chalkydri/chalkydri.git
 
 pushd chalkydri
 
-make
+make rust
 mv target/release/chalkydri /usr/local/bin
 
 popd #chalkydri
