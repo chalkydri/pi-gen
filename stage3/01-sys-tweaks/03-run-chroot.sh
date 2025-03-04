@@ -17,12 +17,7 @@ git clone https://github.com/chalkydri/chalkydri.git
 
 pushd chalkydri
 
-pushd ui
-bun install
-bun run build
-popd #ui
-
-cargo b -p chalkydri -r
+make
 mv target/release/chalkydri /usr/local/bin
 
 popd #chalkydri
