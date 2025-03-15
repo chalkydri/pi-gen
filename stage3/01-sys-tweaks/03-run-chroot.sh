@@ -17,7 +17,7 @@ git clone https://github.com/chalkydri/chalkydri.git
 
 pushd chalkydri
 
-make rust RUSTFLAGS="-C target-feature=-crt-static -C target-cpu=cortex-a76 -C target-feature=+fp-armv8,+neon,+crc,+crypto" RUST_MIN_STACK=16777216
+make rust RUSTFLAGS="-C target-feature=-crt-static -C target-cpu=cortex-a76 -C target-feature=+fp-armv8,+neon,+crc,+crypto" RUST_MIN_STACK=335544324
 mv target/release/chalkydri /usr/local/bin
 
 popd #chalkydri
