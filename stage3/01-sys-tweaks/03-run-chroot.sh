@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 apt update
-wget https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.0/libjpeg-turbo-official_3.1.0_amd64.deb
-apt install git libclang-dev unzip ./libjpeg-turbo-official_3.1.0_amd64.deb
+wget https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.0/libjpeg-turbo-official_3.1.0_arm64.deb
+apt install git libclang-dev unzip ./libjpeg-turbo-official_3.1.0_arm64.deb
 
 # Install rustup
 curl -o rustup-init https://sh.rustup.rs
