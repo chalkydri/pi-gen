@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
 apt update
-wget https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.1.0/libjpeg-turbo-official_3.1.0_arm64.deb
-apt install git libclang-dev unzip ./libjpeg-turbo-official_3.1.0_arm64.deb
+apt install git libclang-dev unzip cmake
 
 # Install rustup
 curl -o rustup-init https://sh.rustup.rs
@@ -26,6 +25,7 @@ popd #chalkydri
 # Clean up
 rm -r ~/.rustup ~/.cargo ~/.bun chalkydri
 apt remove git build-essential pkg-config \
-	curl ca-certificates libclang-dev unzip
+	curl ca-certificates libclang-dev unzip \
+	cmake
 
 systemctl enable chalkydri
